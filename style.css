@@ -205,18 +205,19 @@ body.dark .background {
 .hero-container {
     position: relative;
     z-index: 1;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding: 3rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 600px;
 }
 
 @media (min-width: 768px) {
     .hero-container {
-        padding-top: 8rem;
-        padding-bottom: 8rem;
+        padding: 5rem 1rem;
     }
 }
 
@@ -304,6 +305,28 @@ body.dark .profile-image {
     }
 }
 
+/* Sobre Mim */
+.about-inline {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--secondary);
+    box-shadow: var(--shadow-sm);
+    animation: fadeInDelay 0.8s ease-out 0.6s both;
+}
+
+.about-inline h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--foreground);
+}
+
+.about-inline p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--secondary-foreground);
+}
+
 /* Divider */
 .divider {
     height: 1px;
@@ -354,56 +377,6 @@ body.dark .profile-image {
     width: 1.25rem;
     height: 1.25rem;
     display: block;
-}
-
-/* About Section */
-.about-section {
-    padding: 2rem 0;
-}
-
-@media (min-width: 768px) {
-    .about-section {
-        padding: 4rem 0;
-    }
-}
-
-.about-container {
-    max-width: 42rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.about-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.about-title {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    color: var(--foreground);
-    margin-bottom: 0.75rem;
-}
-
-.about-subtitle {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    color: var(--foreground);
-    margin-bottom: 0.75rem;
-}
-
-.about-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    line-height: 1.75rem;
-    color: rgba(var(--foreground-rgb), 0.8);
 }
 
 /* Footer */
