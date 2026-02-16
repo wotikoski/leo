@@ -1,0 +1,463 @@
+/* ============================================
+   Minimalismo Elegante - Tipografia Refinada
+   ============================================ */
+
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+/* CSS Variables - Modo Claro */
+:root {
+    /* Cores - Modo Claro */
+    --background: #faf9f7;
+    --foreground: #403d37;
+    --secondary: #f0ede8;
+    --secondary-foreground: #5a5550;
+    --muted-foreground: #8b8680;
+    --border: #f0ede8;
+    --primary: #1e3a8a;
+    --primary-light: #3b82f6;
+    
+    /* Sombras */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS Variables - Modo Escuro */
+body.dark {
+    --background: #383838;
+    --foreground: #ddd9d3;
+    --secondary: #484848;
+    --secondary-foreground: #c0bbb5;
+    --muted-foreground: #a6a19b;
+    --border: rgba(255, 255, 255, 0.12);
+    --primary: #7fa3d8;
+    --primary-light: #8fb5e8;
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInDelay {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.6s ease-out;
+}
+
+.animate-fade-in-delay-1 {
+    animation: fadeInDelay 0.8s ease-out 0.2s both;
+}
+
+.animate-fade-in-delay-2 {
+    animation: fadeInDelay 0.8s ease-out 0.4s both;
+}
+
+.animate-fade-in-delay-3 {
+    animation: fadeInDelay 0.8s ease-out 0.6s both;
+}
+
+.animate-fade-in-delay-4 {
+    animation: fadeInDelay 0.8s ease-out 0.8s both;
+}
+
+.animate-fade-in-delay-5 {
+    animation: fadeInDelay 0.8s ease-out 1s both;
+}
+
+/* Container */
+.hero-container,
+.about-container,
+.footer-container {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .hero-container,
+    .about-container,
+    .footer-container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-container,
+    .about-container,
+    .footer-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+body.dark .background {
+    display: none;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 1;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .hero-container {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--secondary);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--foreground);
+}
+
+.theme-toggle:hover {
+    background-color: var(--secondary);
+    opacity: 0.8;
+}
+
+.theme-toggle svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Profile Image */
+.profile-wrapper {
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .profile-image {
+        width: 10rem;
+        height: 10rem;
+    }
+}
+
+body.dark .profile-image {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Content */
+.hero-name {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--foreground);
+}
+
+@media (min-width: 768px) {
+    .hero-name {
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+}
+
+.hero-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: var(--muted-foreground);
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+}
+
+/* Divider */
+.divider {
+    height: 1px;
+    background-color: var(--border);
+    margin: 2rem 0;
+    animation: fadeInDelay 0.8s ease-out 0.4s both;
+}
+
+.hero-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    color: rgba(var(--foreground-rgb), 0.8);
+    max-width: 28rem;
+    margin: 0 auto 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .hero-description {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.social-link {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover {
+    background-color: var(--secondary);
+}
+
+.social-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block;
+}
+
+/* About Section */
+.about-section {
+    padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+    .about-section {
+        padding: 4rem 0;
+    }
+}
+
+.about-container {
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.about-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--foreground);
+    margin-bottom: 0.75rem;
+}
+
+.about-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: var(--foreground);
+    margin-bottom: 0.75rem;
+}
+
+.about-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    color: rgba(var(--foreground-rgb), 0.8);
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+    padding: 2rem 0;
+}
+
+.footer-container {
+    text-align: center;
+}
+
+.footer-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    color: rgba(var(--foreground-rgb), 0.6);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .hero-name {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+    }
+    
+    .about-title {
+        font-size: 1.25rem;
+    }
+    
+    .about-subtitle {
+        font-size: 1.125rem;
+    }
+}
+
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus Visible */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
