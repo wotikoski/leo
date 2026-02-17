@@ -1,11 +1,11 @@
-# Site Pessoal de Leo - Versão HTML/CSS/JS Estática
+# Site Pessoal - Versão HTML/CSS/JS Estática
 
 Bem-vindo! Este é seu site pessoal minimalista convertido para HTML/CSS/JS puro, sem dependências de framework.
 
 ## 📁 Estrutura de Arquivos
 
 ```
-leo-static/
+leo/
 ├── index.html          # Arquivo HTML principal
 ├── style.css           # Estilos CSS
 ├── script.js           # JavaScript para interatividade
