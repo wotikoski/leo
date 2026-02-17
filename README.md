@@ -1,6 +1,6 @@
 # Site Pessoal - Versão HTML/CSS/JS Estática
 
-Bem-vindo! Este é seu site pessoal minimalista convertido para HTML/CSS/JS puro, sem dependências de framework.
+Bem-vindo! Este é meu site pessoal minimalista em HTML/CSS/JS puro, sem dependências de framework.
 
 ## 📁 Estrutura de Arquivos
 
