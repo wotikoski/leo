@@ -305,6 +305,33 @@ body.dark .profile-image {
     }
 }
 
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.social-link {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover {
+    background-color: var(--secondary);
+}
+
+.social-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block;
+}
+
 /* Sobre Mim */
 .about-inline {
     width: 100%;
@@ -355,33 +382,6 @@ body.dark .profile-image {
         font-size: 1.125rem;
         line-height: 1.75rem;
     }
-}
-
-/* Social Links */
-.social-links {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.social-link {
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    transition: background-color 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-link:hover {
-    background-color: var(--secondary);
-}
-
-.social-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-    display: block;
 }
 
 /* Footer */
